@@ -1,8 +1,18 @@
 import {useState} from 'react'
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../features/todo/todoSlice';
 
+{/*Dispatch uses a reducer to add value in a store*/}
 function AddTodos() {
     const [input,setInput]=useState('');
-    
+    const dispatch=useDispatch();
+
+    const addTodoHandler=(e)=>{
+        e.preventDefault();
+        dispatch(addTodo(input));{/*This input will act as action.payload for reducer */}
+        setInput('');
+    }
+
   return (
     <form onSubmit={addTodoHandler} className="space-x-3 mt-12">
       <input
