@@ -1,10 +1,12 @@
+import AddTodos from "../components/AddTodos";
+import Todos from "../components/Todos";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <h1>Practice for redux</h1>
-      <h2>This is a practice</h2>
+      <AddTodos/>
+      <Todos/>
     </>
   );
 }
